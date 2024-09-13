@@ -62,10 +62,32 @@
     // --- 1. Let's make a histogram of all passengers on the Titanic
     //  This will take the form of a bar chart -- but we are using a trick and not creating <rect> for each bar
     //  Instead, we'll make a thick vertical <line> for each bar. I don't recommend you do this outside of toy examples
-    console.log(passengers);
-    
-    
-    
+      console.log(passengers);
+
+let svg = d3.select("svg#all");
+let width = svg.attr("width");
+let height = svg.attr("height");
+
+let ageScale = d3.scaleLinear()
+  .domain([0, 80])
+  .range([10, width - 10]);
+
+let livedScale = d3.scaleLinear()
+  .domain([0, 200])
+  .range([height/2, 10]);  
+
+console.log(ageScale);
+
+passengers.forEach((d, i) => {
+  svg.append("line")
+    .attr("x1", ageScale(d['age']))
+    .attr("x2", ageScale(d['age']))
+    .attr("y1", height - 10)           
+    .attr("y2", livedScale(d["lived"]))  
+    .style("stroke", "#555F00")          
+    .style("stroke-width", 10);
+});
+
     
     
     // --- 2. What about deaths? (oop, things are getting pretty dark)
