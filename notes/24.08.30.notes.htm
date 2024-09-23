@@ -76,14 +76,10 @@
     //    We have three different declarations, var, const, and let
     //    Var came earlier, const & let more recently
     //    (only use VAR if you really mean it!)
-    let fruit = 'mango';
-    var veg = 'broccoli';
-    const legume = 'lentil';
-    
-    console.log("--start");
-    console.log(fruit);
-    console.log(veg);
-    console.log(legume);
+let fruit = "mango";
+var veg = "broccoli"; 
+const legume = "lentil";
+
     
     if (fruit === "mango") {   // curly braces signal we have entered the if statement's block scope
         let fruit = "apple";
@@ -163,11 +159,19 @@
 
 
     // Finally, in modern javascript there is a handy shortcut -- arrow functions
-    let bestAnimal = () => { console.log("dog"); }
-    let addNums = (num1, num2) => { return num1 + num2; }
-    let addTwo = number => { return number+2; } // If you only have one parameter, you can skip the parentheses
-    let addThree = number => number+3; // If you are immediately returning, you can actually just skip the { } and return
+    // let bestAnimal = () => { console.log("dog"); }
+    // let addNums = (num1, num2) => { return num1 + num2; }
+    // let addTwo = number => { return number+2; } // If you only have one parameter, you can skip the parentheses
+    // let addThree = number => number+3; // If you are immediately returning, you can actually just skip the { } and return
       
+    console.log("---test for ian--");
+    let bestAnimal = () => {console.log("dog"); }
+    bestAnimal(); 
+// this means the same things as let bestAnimal = function () {console.log("dog")}
+    let addNums = (num1, num2) => {return num1+num2;}
+    console.log ( addNums (5, 10));
+
+
     
     // * Brief foray into "destructuring"
     // Javascript can help to destructure objects and arrays during variable assignment
