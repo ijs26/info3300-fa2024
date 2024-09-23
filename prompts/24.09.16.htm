@@ -59,9 +59,13 @@
     // --- 1
     //  '../datasets/titanic.json'
     console.log( '---Top of file---' );
-                  
+    console.log(d3.json('../datasets/titanic.json'));
+    console.log("When will this print?");
     
     
+    d3.json('../datasets/titanic.json').then( (data) => {
+      console.log("Promise fulfilled")
+    })
 
     // --- 2
     // Let's make a plain old scatterplot
